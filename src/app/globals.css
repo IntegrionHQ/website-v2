@@ -5,10 +5,45 @@
   font-family: 'Hemming';
   src: url('/fonts/Hemming.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Graphik';
+  src: url('/fonts/Graphik-Light.ttf') format('truetype');
+}
 
 body{
   background-color: #00010e;
   font-family: 'Hemming', sans-serif;
+}
+
+.font-graphik
+{
+  font-family: 'Graphik', sans-serif;
+}
+
+.primary-button:hover{
+   background-color: hsla(0,0%,100%,.1);
+    border-color: hsla(0,0%,100%,.5);
+    box-shadow: inset 0 0 8px 0 hsla(0,0%,100%,.1),inset 0 0 11px 2px hsla(0,0%,100%,.1),0 3px 16px 0 hsla(0,0%,100%,.1);
+    color: white;
+}
+.active-step{
+   background-color: hsla(0,0%,100%,.1);
+    border-color: hsla(0,0%,100%,.5);
+    box-shadow: inset 0 0 8px 0 hsla(0,0%,100%,.1),inset 0 0 11px 2px hsla(0,0%,100%,.1),0 3px 16px 0 hsla(0,0%,100%,.1);
+    color: white;
+}
+
+.pricing-card{
+   background-color: var(--color-white);
+    border-color: var(--color-border-blue);
+    box-shadow: inset 0 0 10px 0 rgba(10,51,255,.34),0 3px 16px 0 rgba(10,51,255,.15),inset 0 0 30px 2px rgba(10,51,255,.16);
+    color: black;
+}
+.secondary-button:hover {
+ background-color: var(--color-white);
+    border-color: var(--color-border-blue);
+    box-shadow: inset 0 0 10px 0 rgba(10,51,255,.34),0 3px 16px 0 rgba(10,51,255,.15),inset 0 0 30px 2px rgba(10,51,255,.16);
+    color: black;
 }
 @custom-variant dark (&:is(.dark *));
 
