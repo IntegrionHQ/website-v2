@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
    <main className="mx-20 border-l border-r  border-l-gray-400 border-r-gray-500 space-y-20">
-    <div className="border-b border-t border-t-gray-500 border-b-gray-500">
+    <div className="border-b border-t-gray-500 border-b-gray-500">
  <div className="flex flex-col items-start justify-center h-screen gap-2 p-10">
       <span className="text-gray-500 border border-gray-500 px-4 py-1 mb-4 text-sm uppercase">
         <Image src="/E2B.svg" alt="E2B Logo" width={80} height={20} className="inline-block mr-2"/>
