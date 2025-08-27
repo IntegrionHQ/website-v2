@@ -51,7 +51,7 @@ const Workflow = () => {
 
   return (
     <div className="relative w-full mx-auto py-12">
-      <div className="w-full flex flex-row justify-between items-center">
+      <div className="w-full flex flex-col md:flex-row justify-between items-center">
         {steps.map((step, idx) => (
           <React.Fragment key={step.title}>
             <div
