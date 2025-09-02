@@ -4,9 +4,11 @@ import Image from "next/image";
 import Squares from "@/components/Squares";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
+import { BetaModal } from "@/components/core/layout/BetaModal";
 // import { Navbar } from "@/components/core/layout/Navbar";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <main className=" relative flex flex-col h-screen items-stretch justify-center">
       <Squares
@@ -18,9 +20,10 @@ export default function Home() {
         className="absolute inset-0"
       />
       <div className="z-50">
+        {modalOpen && <BetaModal onClick={() => setModalOpen(false)} />}
         <div className="flex flex-col h-screen justify-between items-start gap-3  py-5">
           {/*<Navbar />*/}
-          <div className="relative flex  justify-between items-center bg-white  w-9/10 py-5 px-10 mx-auto gap-2 tag rounded-sm">
+          <div className="relative flex  justify-between items-center bg-white  w-9/10 py-5 px-5 mx-auto gap-2 tag rounded-sm">
             <div className="flex justify-center items-center gap-2">
               <Image
                 src="/logo.svg"
@@ -44,15 +47,15 @@ export default function Home() {
             </div>
             <div className="flex justify-center items-center md:hidden">
               <button onClick={() => setMenuOpen(!menuOpen)}>
-                {menuOpen ? (
-                  <XMarkIcon className="size-7 text-black" />
+                {!menuOpen ? (
+                  <XMarkIcon className="size-7 text-black cursor-pointer" />
                 ) : (
-                  <Bars3Icon className="size-7 text-black" />
+                  <Bars3Icon className="size-7 text-black cursor-pointer" />
                 )}
               </button>
             </div>
-            {menuOpen && (
-              <div className="absolute w-full -bottom-26 left-0 bg-white -z-10 p-5 tag">
+            {!menuOpen && (
+              <div className="absolute  w-full -bottom-26 left-0 bg-white -z-10 p-5 tag md:hidden">
                 <div className="flex flex-col justify-center items-start gap-2">
                   <Link
                     href="/about"
@@ -70,16 +73,18 @@ export default function Home() {
               </div>
             )}
           </div>
-          <div className="flex flex-col justify-center items-start gap-3 md:px-10 px-5">
+          <div className="flex flex-col justify-center items-start gap-3 w-9/10  md:px-20 px-5">
             <div>
-              <span className="inline-block gap-2 uppercase text-black bg-white rounded-sm backdrop-blur-lg border border-white/20 text-sm px-3 py-1">
-                <Image
-                  src="/Black-1.png"
-                  alt="Integrion Logo"
-                  width={150}
-                  height={50}
-                />
-              </span>
+              {menuOpen ? (
+                <span className="inline-block gap-2 uppercase text-black bg-white rounded-sm backdrop-blur-lg border border-white/20 text-sm px-3 py-1">
+                  <Image
+                    src="/Black-1.png"
+                    alt="E2B Startup Member Logo"
+                    width={150}
+                    height={50}
+                  />
+                </span>
+              ) : null}
             </div>
 
             <h2 className="text-6xl font-bold md:w-3/4 w-full">
@@ -90,11 +95,14 @@ export default function Home() {
               reliability, and validate backend logic—so engineers ship safer,
               faster, and with confidence.
             </p>
-            <button className="bg-black text-white px-4 py-3 rounded-sm primary-button hover:bg-white">
+            <button
+              className="bg-black text-white px-4 py-3 rounded-sm primary-button hover:bg-white"
+              onClick={() => setModalOpen(true)}
+            >
               Join Beta Waitlist
             </button>
           </div>
-          <div className="flex justify-between items-center w-full py-5 px-10 mx-auto">
+          <div className="flex justify-between items-center w-full py-5 md:px-20 px-5 mx-auto">
             <div className="flex justify-center items-center gap-4">
               <Link href="/about" className="hover:font-bold">
                 info@integrion.xyz
