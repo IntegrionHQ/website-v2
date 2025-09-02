@@ -35,7 +35,10 @@ export default function Home() {
             </div>
 
             <div className=" justify-center items-center gap-4 hidden md:flex">
-              <Link href="/about" className="hover:font-medium hover:underline">
+              <Link
+                href="/terms-and-conditions"
+                className="hover:font-medium hover:underline"
+              >
                 Terms and Conditions
               </Link>
               <Link
