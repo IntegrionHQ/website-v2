@@ -7,7 +7,9 @@ import { useState } from "react";
 import { BetaModal } from "@/components/core/layout/BetaModal";
 // import { Navbar } from "@/components/core/layout/Navbar";
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
+
+  const [menuOpen, setMenuOpen] = useState(true);
+
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <main className=" relative flex flex-col h-screen items-stretch justify-center">
