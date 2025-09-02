@@ -1,13 +1,13 @@
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Terms-and-conditions',
-}
+  title: "Terms-and-conditions",
+};
 
-export default function Terms-and-conditionsLayout({
+export default function TermsandconditionsLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  return <>{children}</>
+  return <>{children}</>;
 }
