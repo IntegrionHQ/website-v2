@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,3 +12,4 @@ export default function TermsandconditionsLayout({
 }) {
   return <>{children}</>;
 }
+
