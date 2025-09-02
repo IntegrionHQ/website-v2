@@ -27,7 +27,7 @@ export const BetaModal = ({ onClick }: { onClick: () => void }) => {
 
   return (
     <div className="fixed  inset-0 bg-black/50 z-50 flex flex-col justify-center items-center">
-      <div className="bg-white w-1/2 rounded-sm flex flex-col justify-center items-start p-5 gap-5">
+      <div className="bg-white w-full md:w-1/2 rounded-sm flex flex-col justify-center items-start p-5 gap-5">
         <div className="flex justify-between items-start w-full">
           <div>
             <h1 className="font-bold text-2xl tracking-wide">

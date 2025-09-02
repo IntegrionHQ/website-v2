@@ -107,10 +107,10 @@ export default function Home() {
               Join Beta Waitlist
             </button>
           </div>
-          <div className="flex justify-between items-center w-full py-5 md:px-20 px-5 mx-auto">
+          <div className="flex flex-col md:flex-row justify-between  items-start md:items-center w-full py-5 md:px-20 px-5 mx-auto">
             <div className="flex justify-center items-center gap-4">
               <Link href="/about" className="hover:font-bold">
-                info@integrion.xyz
+                contact@integrion.xyz
               </Link>
             </div>
             <div className="flex justify-center items-center gap-4">
