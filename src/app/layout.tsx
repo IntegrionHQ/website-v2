@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/core/layout/Navbar";
-import Footer from "@/components/core/layout/Footer";
-
-
+// import { Navbar } from "@/components/core/layout/Navbar";
 
 export const metadata: Metadata = {
   title: "Integrion",
@@ -17,13 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={` antialiased`}
-      >
-        <Navbar/>
-        {children}
-        <Footer/>
-      </body>
+      <body className={` antialiased`}>{children}</body>
     </html>
   );
 }
