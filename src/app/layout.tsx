@@ -4,23 +4,26 @@ import "./globals.css";
 
 export const metadata = {
   title: {
-    template: '%s | Your Title',
-    default: 'Your Title',
+    template: "%s | Integrion",
+    default: "Integrion |  AI-powered infra-native testing platform",
   },
-  description: "Your Description",
-  keywords: ["nextjs", "react", "seo"],
-  authors: [{ name: "Your Name" }],
+  description: "Your AI-powered infra-native ",
+  keywords: ["infrastructure", "testing", "ai", "backend", "QA"],
+  authors: [{ name: "Integrion" }],
   verification: {
     google: "ahnuzveQZ1UXkJ2upyy_XDoAucCigZ6NjaQRNMzmS4g",
   },
   openGraph: {
-    title: "Your Title",
-    description: "Your Description",
+    title: "Integrion |  AI-powered infra-native testing platform",
+    description:
+      "Integrion deploys infra-native agents that hunt bugs, stress-test reliability, and validate backend logic—so engineers ship safer, faster, and with confidence.",
     url: "https://www.integrion.xyz/",
-    siteName: "Your Title",
-    images: [{
-      url: "https://www.integrion.xyz/openGraph-image.jpg",
-    }],
+    siteName: "Integrion",
+    images: [
+      {
+        url: "https://www.integrion.xyz/openGraph-image.jpg",
+      },
+    ],
     type: "website",
   },
   twitter: {
@@ -28,8 +31,8 @@ export const metadata = {
     title: "Your Title",
     description: "Your Description",
     images: ["https://www.integrion.xyz/openGraph-image.jpg"],
-  }
-}
+  },
+};
 
 export default function RootLayout({
   children,
