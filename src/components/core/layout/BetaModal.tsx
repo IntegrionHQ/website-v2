@@ -1,4 +1,5 @@
-import formik from "formik";
+"use client";
+import { useState } from "react";
 import * as Yup from "yup";
 import Form from "./form";
 import Input from "../Input";
@@ -6,28 +7,54 @@ import SelectInput from "../SelectInput";
 import TextArea from "../TextArea";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { Resend } from "resend";
 export const BetaModal = ({ onClick }: { onClick: () => void }) => {
   const betaValidationSchema = Yup.object({
-    fullName: Yup.string().required("Full name is required"),
+    firstName: Yup.string().required("First name is required"),
+    lastName: Yup.string().required("Last name is required"),
     workEmail: Yup.string()
       .email("Invalid email address")
       .required("Work email is required"),
-    company: Yup.string(),
-    role: Yup.string().required("Role is required"),
-    teamSize: Yup.string().required("Team size is required"),
-    primaryStack: Yup.string().required("Tech stack is required"),
-    biggestPainPoint: Yup.string().required(
-      "Please tell us so we can address it , we would love to😁",
-    ),
+    // company: Yup.string(),
+    // role: Yup.string().required("Role is required"),
+    // teamSize: Yup.string().required("Team size is required"),
+    // primaryStack: Yup.string().required("Tech stack is required"),
+    // biggestPainPoint: Yup.string().required(
+    //   "Please tell us so we can address it , we would love to😁",
+    // ),
   });
+  const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY as string);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(false);
 
-  const handleSubmit = (values: any) => {
-    console.log(values);
+  const handleSubmit = async (values: any) => {
+    setLoading(true);
+    try {
+      const data = await resend.contacts.create({
+        firstName: values.firstName,
+        lastName: values.lastName,
+        email: values.workEmail,
+        audienceId: process.env.RESEND_AUDIENCE_ID as string,
+        // metadata: {
+        //   company: values.company,
+        //   role: values.role,
+        //   teamSize: values.teamSize,
+        //   primaryStack: values.primaryStack,
+        //   biggestPainPoint: values.biggestPainPoint,
+        //   }``
+      });
+      if (!data?.error) {
+        setLoading(false);
+        setSuccess(true);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <div className="fixed  inset-0 bg-black/50 z-50 flex flex-col justify-center items-center">
-      <div className="bg-white w-full md:w-1/2 rounded-sm flex flex-col justify-center items-start p-5 gap-5">
+      <div className="bg-white w-full md:w-2/5 rounded-sm flex flex-col justify-center items-start p-5 gap-5">
         <div className="flex justify-between items-start w-full">
           <div>
             <h1 className="font-bold text-2xl tracking-wide">
@@ -47,13 +74,14 @@ export const BetaModal = ({ onClick }: { onClick: () => void }) => {
 
         <Form
           initialValues={{
-            fullName: "",
+            firstName: "",
+            lastName: "",
             workEmail: "",
-            company: "",
-            role: "",
-            teamSize: "",
-            primaryStack: "",
-            biggestPainPoint: "",
+            // company: "",
+            // role: "",
+            // teamSize: "",
+            // primaryStack: "",
+            // biggestPainPoint: "",
           }}
           validationSchema={betaValidationSchema}
           className="space-y-4 w-full"
@@ -63,28 +91,42 @@ export const BetaModal = ({ onClick }: { onClick: () => void }) => {
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Input
-                  name="fullName"
-                  value={formik.values.fullName}
+                  name="firstName"
+                  value={formik.values.firstName}
                   onChange={formik.handleChange}
-                  placeholder="James Doe"
-                  label="Full Name"
+                  placeholder="James"
+                  label="First Name"
                   required
                   error={
-                    formik.touched.fullName ? formik.errors.fullName : null
+                    formik.touched.firstName ? formik.errors.firstName : null
                   }
                 />
                 <Input
-                  name="workEmail"
-                  value={formik.values.workEmail}
+                  name="lastName"
+                  value={formik.values.lastName}
                   onChange={formik.handleChange}
-                  placeholder="name@comapny.domain"
-                  label="Work Email"
+                  placeholder="Smith"
+                  label="Last Name"
                   required
                   error={
-                    formik.touched.workEmail ? formik.errors.workEmail : null
+                    formik.touched.lastName ? formik.errors.lastName : null
                   }
                 />
-                <Input
+                <div className="col-span-2">
+                  <Input
+                    name="workEmail"
+                    value={formik.values.workEmail}
+                    onChange={formik.handleChange}
+                    placeholder="name@comapny.domain"
+                    label="Work Email"
+                    required
+                    error={
+                      formik.touched.workEmail ? formik.errors.workEmail : null
+                    }
+                  />
+                </div>
+
+                {/*<Input
                   name="company"
                   value={formik.values.company}
                   onChange={formik.handleChange}
@@ -190,10 +232,14 @@ export const BetaModal = ({ onClick }: { onClick: () => void }) => {
                         : null
                     }
                   />
-                </div>
+                </div>*/}
               </div>
               <button className="border border-black text-black text-sm rounded-sm px-4 py-3 hover:bg-black hover:text-white cursor-pointer w-full mt-3 flex justify-between items-center">
-                Secure your spot
+                {loading
+                  ? "Securing your spot...hang on😁"
+                  : success
+                    ? "Your spot has been secured"
+                    : "Secure my spot"}
                 <ArrowRightIcon className="size-5" />
               </button>
             </>
