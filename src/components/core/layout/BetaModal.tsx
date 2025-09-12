@@ -30,21 +30,20 @@ export const BetaModal = ({ onClick }: { onClick: () => void }) => {
   const handleSubmit = async (values: any) => {
     setLoading(true);
     try {
-      const data = await resend.contacts.create({
-        firstName: values.firstName,
-        lastName: values.lastName,
-        email: values.workEmail,
-        audienceId: process.env.RESEND_AUDIENCE_ID as string,
-        // metadata: {
-        //   company: values.company,
-        //   role: values.role,
-        //   teamSize: values.teamSize,
-        //   primaryStack: values.primaryStack,
-        //   biggestPainPoint: values.biggestPainPoint,
-        //   }``
+      const data = await fetch("/api/resend", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.workEmail,
+          audienceId: process.env.RESEND_AUDIENCE_ID as string,
+        }),
       });
-      if (!data?.error) {
-        setLoading(false);
+      const response = await data.json();
+      if (response.status === 200) {
         setSuccess(true);
       }
     } catch (error) {
