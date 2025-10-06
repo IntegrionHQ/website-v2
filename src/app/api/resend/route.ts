@@ -11,7 +11,7 @@ export async function POST(request: Request) {
       firstName,
       lastName,
       email,
-      audienceId,
+      audienceId: "715fe67a-2abe-48dd-8255-cd26e5ebf6ce",
       unsubscribed: false,
     });
     console.log(data);

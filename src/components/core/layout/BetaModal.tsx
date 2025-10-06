@@ -23,7 +23,6 @@ export const BetaModal = ({ onClick }: { onClick: () => void }) => {
     //   "Please tell us so we can address it , we would love to😁",
     // ),
   });
-  const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY as string);
   const [loading, setLoading] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
 
@@ -43,7 +42,7 @@ export const BetaModal = ({ onClick }: { onClick: () => void }) => {
         }),
       });
       const response = await data.json();
-      if (response.status === 200) {
+      if (response.error === null) {
         setSuccess(true);
       }
     } catch (error) {
@@ -233,7 +232,10 @@ export const BetaModal = ({ onClick }: { onClick: () => void }) => {
                   />
                 </div>*/}
               </div>
-              <button className="border border-black text-black text-sm rounded-sm px-4 py-3 hover:bg-black hover:text-white cursor-pointer w-full mt-3 flex justify-between items-center">
+              <button
+                type="submit"
+                className="border border-black text-black text-sm rounded-sm px-4 py-3 hover:bg-black hover:text-white cursor-pointer w-full mt-3 flex justify-between items-center"
+              >
                 {loading
                   ? "Securing your spot...hang on😁"
                   : success
