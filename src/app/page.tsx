@@ -39,13 +39,13 @@ export default function Home() {
             <div className=" justify-center items-center gap-4 hidden md:flex">
               <Link
                 href="/terms-and-conditions"
-                className="hover:font-medium hover:underline"
+                className="hover:font-medium hover:underline nav uppercase"
               >
                 Terms and Conditions
               </Link>
               <Link
                 href="/contact"
-                className="hover:font-medium hover:underline"
+                className="hover:font-medium hover:underline nav uppercase"
               >
                 Privacy Policy
               </Link>
@@ -64,13 +64,13 @@ export default function Home() {
                 <div className="flex flex-col justify-center items-start gap-2">
                   <Link
                     href="/about"
-                    className="hover:font-medium hover:underline"
+                    className="hover:font-medium hover:underline nav uppercase font-semibold tracking-tight"
                   >
                     Terms and Conditions
                   </Link>
                   <Link
                     href="/contact"
-                    className="hover:font-medium hover:underline"
+                    className="hover:font-medium hover:underline nav uppercase font-semibold tracking-tight"
                   >
                     Privacy Policy
                   </Link>
@@ -92,7 +92,7 @@ export default function Home() {
               ) : null}
             </div>
 
-            <h2 className="text-6xl font-bold md:w-3/4 w-full">
+            <h2 className="text-6xl font-bold md:w-3/4 w-full ">
               AI-powered testing for mordern infrastructure
             </h2>
             <p className="text-lg font-light md:w-3/4">
@@ -101,7 +101,7 @@ export default function Home() {
               faster, and with confidence.
             </p>
             <button
-              className="bg-black text-white px-4 py-3 rounded-sm primary-button hover:bg-white"
+              className="bg-[#8059e3] text-white px-4 py-3 rounded-sm primary-button hover:bg-purple-800 nav uppercase tracking-tight font-medium"
               onClick={() => setModalOpen(true)}
             >
               Join Beta Waitlist

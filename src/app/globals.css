@@ -1,18 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import "tailwindcss";
 
 @font-face {
     font-family: "Aeonik";
-    src: url("/fonts/Aeonik.ttf") format("truetype");
+    src: url("/fonts/Matter-Regular.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Aeonik Light";
-    src: url("/fonts/Aeonik-Light.otf") format("opentype");
+    src: url("/fonts/Matter-Light.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Aeonik Bold";
-    src: url("/fonts/Aeonik-Bold.otf") format("opentype");
+    src: url("/fonts/Matter-Bold.ttf") format("truetype");
 }
 
 body {
@@ -34,7 +35,7 @@ body {
         inset 0 0 6px hsla(0, 0%, 100%, 0.2),
         /* inner glow */ inset 0 0 14px hsla(0, 0%, 100%, 0.1),
         /* subtle depth */ 0 4px 20px hsla(0, 0%, 0%, 0.25); /* outer shadow for lift */
-    color: #000;
+    color: #fff;
     transform: translateY(-2px); /* tiny lift on hover */
     transition: all 0.25s ease; /* smoother transition */
     cursor: pointer;
@@ -52,4 +53,9 @@ body {
     transition: all 0.25s ease; /* smoother transition */
     cursor: pointer;
     font-weight: semibold;
+}
+
+.nav{
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
 }
