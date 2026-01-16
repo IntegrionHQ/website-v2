@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
 @import "tailwindcss";
 
 @font-face {
@@ -16,6 +16,13 @@
     src: url("/fonts/Matter-Bold.ttf") format("truetype");
 }
 
+
+body{
+  background-image: url('/bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 body {
     font-family: "Aeonik", sans-serif;
 }
@@ -28,7 +35,7 @@ body {
     font-family: "Aeonik Light", sans-serif;
 }
 
-.primary-button:hover {
+.primary-button{
     /*background-color: hsla(0, 0%, 100%, 0.08); /* softer glassy tint */
     border-color: hsla(0, 0%, 100%, 0.6); /* slightly brighter border */
     box-shadow:
@@ -56,6 +63,6 @@ body {
 }
 
 .nav{
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Geist Mono", monospace;
   font-optical-sizing: auto;
 }
