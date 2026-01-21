@@ -661,25 +661,25 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col justify-center items-center gap-8 w-full p-6 md:p-10 border-t border-dotted border-gray-300">
-           <div className="flex flex-col items-center gap-2 text-center my-10">
-              <h3 className="text-2xl md:text-4xl font-semibold text-black">
+           <div className="flex flex-col items-center gap-2 text-center my-10 px-4">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-black leading-tight">
                 Tests shouldn’t be an afterthought.
               </h3>
-              <h3 className="text-2xl md:text-4xl font-semibold text-gray-400">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-400 leading-tight">
                 They should be automatic.
               </h3>
            </div>
 
-           <div className="flex flex-col md:flex-row justify-between items-center w-full mt-10 text-sm nav text-gray-600 border-t border-dotted border-gray-300 pt-10">
-              <div className="flex items-center gap-4">
-                 <Image src="/logo.svg" alt="Integrion Logo" width={24} height={24} />
-                 <span>&copy; {new Date().getFullYear()} Integrion. All rights reserved.</span>
+           <div className="flex flex-col md:flex-row justify-between items-center w-full mt-10 text-sm nav text-gray-600 border-t border-dotted border-gray-300 pt-10 gap-8 md:gap-0">
+              <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+                 <Image src="/logo.svg" alt="Integrion Logo" width={24} height={24} className="opacity-80" />
+                 <span className="text-xs sm:text-sm">&copy; {new Date().getFullYear()} Integrion. All rights reserved.</span>
               </div>
               
-              <div className="flex gap-6 mt-4 md:mt-0 uppercase">
-                 <Link href="/terms-and-conditions" className="hover:text-black">Terms and Conditions</Link>
-                 <Link href="/" className="hover:text-black">Privacy Policy</Link>
-                 <a href="mailto:contact@integrion.xyz" className="hover:text-black">contact@integrion.xyz</a>
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 uppercase text-xs sm:text-sm tracking-wide">
+                 <Link href="/terms-and-conditions" className="hover:text-black transition-colors duration-200">Terms</Link>
+                 <Link href="/privacy-policy" className="hover:text-black transition-colors duration-200">Privacy</Link>
+                 <a href="mailto:contact@integrion.xyz" className="hover:text-black transition-colors duration-200">Contact</a>
               </div>
            </div>
         </section>
