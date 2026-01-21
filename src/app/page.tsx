@@ -371,7 +371,7 @@ export default function Home() {
           viewport={{ once: true }}
           custom={4}
           className="text-lg text-gray-700 font-light md:w-2/3 leading-normal text-center mb-12">
-              Integrion works alongside your codebase and CI pipeline to automatically write, run, and maintain tests for critical code paths — catching breaking changes before they reach production.
+              Automatically writes, runs, and maintains tests for your critical code — catching bugs before you ship.
           </motion.p>
   
           {/* MODERN GRID LAYOUT - CARDS WITH BORDERS AND GAP */}
