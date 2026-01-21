@@ -13,7 +13,7 @@ import { wrap } from '@motionone/utils';
 import { cn } from '@/components/lib/utils';
 
 interface ParallaxProps {
-  children: string;
+  children: React.ReactNode;
   baseVelocity: number;
   classname?: string;
   scrollDependent?: boolean; // Toggle scroll-dependent behavior
@@ -76,16 +76,16 @@ export default function ScrollBaseAnimation({
         className='flex whitespace-nowrap gap-10 flex-nowrap w-max'
         style={{ x }}
       >
-        <span className={cn(`block sm:text-[8vw] text-[4vw]`, classname)}>
+        <span className={cn(`block`, classname)}>
           {children}
         </span>
-        <span className={cn(`block sm:text-[8vw] text-[4vw]`, classname)}>
+        <span className={cn(`block`, classname)}>
           {children}
         </span>
-        <span className={cn(`block sm:text-[8vw] text-[4vw]`, classname)}>
+        <span className={cn(`block`, classname)}>
           {children}
         </span>
-        <span className={cn(`block sm:text-[8vw] text-[4vw]`, classname)}>
+        <span className={cn(`block`, classname)}>
           {children}
         </span>
       </motion.div>

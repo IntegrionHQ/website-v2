@@ -14,6 +14,8 @@ import ScrollBaseAnimation from "@/components/core/ui/MarqueeTextScroll";
 import { PricingCard } from "./components/cards/PricingCard";
 
 import { Navbar } from "@/components/core/layout/Navbar";
+import { LogoAWS, LogoBloomberg, LogoDocker, LogoE2B, LogoGithub, LogoGoldmanSachs, LogoLinear, LogoMeta, LogoMoniepoint, LogoVercel, LogoYCombinator } from "@/components/CompanyLogos";
+
 // import { Navbar } from "@/components/core/layout/Navbar";
 export default function Home() {
 
@@ -199,6 +201,43 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* TRUSTED BY SECTION */}
+      <section className="w-full flex flex-col justify-center items-center py-12 border-b border-dotted border-gray-300 overflow-hidden bg-gray-50/50">
+         <p className="text-center text-gray-400 text-xs font-mono uppercase tracking-widest mb-8">[ Trusted by engineers at ]</p>
+         <div className="w-full max-w-[100vw] overflow-hidden">
+             <ScrollBaseAnimation
+                baseVelocity={-0.5}
+                classname="w-max"
+             >
+                <div className="flex items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 px-12 md:px-24">
+                   <LogoYCombinator className="h-8 md:h-10 w-auto" />
+                   <LogoVercel className="h-5 md:h-7 w-auto" />
+                   <LogoLinear className="h-6 md:h-8 w-auto" />
+                   <LogoDocker className="h-8 md:h-10 w-auto" />
+                   <LogoGithub className="h-8 md:h-10 w-auto" />
+                   <LogoAWS className="h-6 md:h-8 w-auto" />
+                   <LogoE2B className="h-5 md:h-7 w-auto" />
+                   <LogoBloomberg className="h-6 md:h-8 w-auto" />
+                   <LogoGoldmanSachs className="h-8 md:h-10 w-auto" />
+                   <LogoMeta className="h-6 md:h-8 w-auto" />
+                   <LogoMoniepoint className="h-6 md:h-8 w-auto" />
+                </div>
+             </ScrollBaseAnimation>
+         </div>
+      </section>
+
+      {/* ACCELERATED BY SECTION */}
+      <section className="w-full flex flex-col md:flex-row justify-center items-center py-6 border-b border-gray-200 bg-white gap-8 md:gap-16">
+          <p className="text-gray-400 text-xs font-mono uppercase tracking-widest md:mr-4">[ Backed By ]</p>
+          <div className="flex items-center gap-12 opacity-80 grayscale hover:grayscale-0 transition-all duration-300">
+             <Image src="/Black-1.png" alt="E2B Startup Program" width={120} height={32} className="h-8 w-auto object-contain" />
+             <div className="flex items-center gap-2">
+                 <LogoAWS className="h-8 w-auto" />
+                 <span className="font-semibold text-sm text-black">Startups</span>
+             </div>
+          </div>
+      </section>
       
       {/* THE PROBLEM SECTION */}
       <section className="relative flex flex-col justify-center items-start gap-4 w-full p-6 md:p-10 border-t border-gray-200 overflow-hidden">
@@ -319,10 +358,11 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true }}
             custom={3}
-            className="text-black text-4xl font-semibold flex justify-center items-center gap-3 text-center mt-2">
-              Meet Integrion 
-              <Image src="/logo.svg" alt="AI Robot" width={40} height={40} className="inline-block mx-2"/>
-              Your Autonomous QA Engineer
+            className="text-black text-2xl md:text-4xl font-semibold flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-center mt-2">
+              
+               <span>Meet Integrion</span> 
+              <Image src="/logo.svg" alt="AI Robot" width={40} height={40} className="inline-block w-8 h-8 md:w-10 md:h-10"/>
+              <span>Your Autonomous QA Engineer</span>
             </motion.h5>
           <motion.p
           variants={listVariants}
@@ -452,7 +492,7 @@ export default function Home() {
                <ScrollBaseAnimation
                   delay={0}
                   baseVelocity={-1}
-                  classname='font-mono text-zinc-500 text-sm mx-4 opacity-70 hover:opacity-100 transition-opacity duration-300'
+                  classname='font-mono text-zinc-500 text-sm mx-4 opacity-70 hover:opacity-100 transition-opacity duration-300 block sm:text-[8vw] text-[4vw]'
                >
                   TypeScript • Python • Go • Rust • Java • Docker • Kubernetes • AWS • GitHub Actions • GitLab CI • Jenkins • PostgreSQL • Redis • MongoDB
                </ScrollBaseAnimation>
