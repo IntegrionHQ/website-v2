@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
+import { cn } from '@/components/lib/utils';
 
 interface SolutionCardProps {
   title: string;
@@ -21,20 +22,25 @@ const SolutionCard = ({ className, title, description, imageScreenshot, size = '
 
   return (
     <div 
-      className={`
-        bg-white 
+      className={cn(
+        `bg-white/80 backdrop-blur-sm
         flex flex-col 
         justify-between 
-        border border-gray-300 
-        shadow-[4px_4px_0px_0px] shadow-gray-300 
-        hover:shadow-[6px_6px_0px_0px] 
-        transition-shadow duration-300
-        overflow-hidden
         p-6
-        ${sizeClasses[size]}
-        ${className || ''}
-      `}
+        border border-gray-200
+        hover:border-gray-400
+        transition-colors duration-300
+        relative group`,
+        sizeClasses[size],
+        className
+      )}
     >
+      {/* Corner accents on hover */}
+      <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-black opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-black opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-black opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-black opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
       <div className='flex flex-col gap-3'>
         <h4 className='text-xl font-semibold text-black nav'>[{title}]</h4>
         <p className='text-gray-600 text-sm leading-relaxed'>{description}</p>
