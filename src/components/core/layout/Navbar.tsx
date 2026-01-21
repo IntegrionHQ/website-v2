@@ -83,7 +83,7 @@ export const Navbar = ({ onCtaClick }: NavbarProps) => {
 
           {/* CTA & Actions */}
           <div className="hidden md:flex items-center gap-3">
-             <Link href="/login" className="text-xs font-medium text-gray-900 hover:opacity-70">
+             <Link href="https://app.integrion.xyz" className="text-xs font-medium text-gray-900 hover:opacity-70">
                 Log in
              </Link>
              <div className="w-px h-4 bg-gray-300 mx-1" />
@@ -149,7 +149,7 @@ export const Navbar = ({ onCtaClick }: NavbarProps) => {
              </div>
 
              <div className="mt-auto flex flex-col gap-4">
-                 <Link href="/login" className="w-full text-center py-3 text-sm font-medium border border-gray-200 rounded-lg">
+                 <Link href="https://app.integrion.xyz" className="w-full text-center py-3 text-sm font-medium border border-gray-200 rounded-lg">
                     Log In
                  </Link>
                  <button 
